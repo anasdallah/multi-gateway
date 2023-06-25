@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  # MySQL server
+  mysql:
+    image: "mysql:latest"
+    container_name: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: tap@012AdAnsd23
+      MYSQL_DATABASE: tap_task
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: tap@012AdAnsd23
+    healthcheck:
+      test: [ "CMD-SHELL", "mysqladmin ping -h localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  #Redis
+  redis:
+    image: redis:alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+    environment:
+      REDIS_HOST: localhost
