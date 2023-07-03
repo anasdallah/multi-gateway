@@ -27,7 +27,7 @@ public class GatewayClientConfiguration {
 
     @Bean
     public Request.Options options() {
-        return new Request.Options(10000, TimeUnit.MILLISECONDS, 1000, TimeUnit.MILLISECONDS, true);
+        return new Request.Options(60, TimeUnit.SECONDS, 30, TimeUnit.SECONDS, true);
     }
 
    
