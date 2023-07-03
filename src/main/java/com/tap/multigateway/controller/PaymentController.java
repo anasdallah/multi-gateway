@@ -34,7 +34,7 @@ public class PaymentController {
 
     @GetMapping("/status/{transaction_id}")
     public ResponseEntity<BaseResponse<PaymentResponse>> paymentStatus(@PathVariable("transaction_id") String transactionId) throws URISyntaxException {
-        return BaseResponseBuilder.created(paymentService.paymentStatus(transactionId));
+        return BaseResponseBuilder.ok(paymentService.paymentStatus(transactionId));
     }
 
 }
